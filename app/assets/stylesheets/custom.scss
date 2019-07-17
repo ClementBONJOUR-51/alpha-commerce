@@ -15,10 +15,28 @@ h2 {
     font-size: 2.5em;
 }
 
+h4 {
+    font-size: 1.5em;
+}
+
 .form-group {
     padding: 10px;
 }
 
-.linkable:hover {
-    background-color: red;
+.car-link {
+    margin: 10px;
+    padding: 10px;
+}
+
+.car-link img {
+    max-width: 200px;
+    height: 130px;
+}
+
+.car-link h4 a {
+    color: #000;
+}
+
+.car-link:hover {
+    background-color: rgb(199, 138, 58);
 }

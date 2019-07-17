@@ -1,43 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cars</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Model</th>
-      <th>Horsepower</th>
-      <th>Mileage</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-<script>
-  
-</script>
-
-  <tbody>
+<div class="container">
+  <h2 class="center">List of offers</h2>
+  <div class="offset-3 col-6">
     <% @cars.each do |car| %>
-      <tr class="linkable">
-        <td><%= link_to car.model, car %></td>
-        <td><%= car.horsepower %></td>
-        <td><%= car.mileage %></td>
-        <td><%= car.price %></td>
-        <td><%= link_to 'Destroy', car, method: 'delete' %></td>
-      </tr>
+      <div class="car-link">
+        <h4><%= link_to car.model, car %></h4>
+        <div class="row">
+          <div class="col-2">
+            <%= image_tag(car.main_picture) %>
+          </div>
+          <div class="offset-3 col-4">
+            <p>horsepower: <%= car.horsepower %> hp</p>
+            <p>mileage: <%= car.mileage %> m</p>
+            <p>price: <%= car.price %> $</p>
+          </div>
+        </div>
+      </div>      
     <% end %>
-  </tbody>
-</table>
-
-<div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action active">
-    Cras justo odio
-  </a>
-  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+  </div>
 </div>
 
 <%= link_to 'New Car', new_car_path %>
