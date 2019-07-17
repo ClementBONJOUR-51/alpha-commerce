@@ -13,9 +13,13 @@
     </tr>
   </thead>
 
+<script>
+  
+</script>
+
   <tbody>
     <% @cars.each do |car| %>
-      <tr>
+      <tr class="linkable">
         <td><%= link_to car.model, car %></td>
         <td><%= car.horsepower %></td>
         <td><%= car.mileage %></td>
@@ -26,6 +30,14 @@
   </tbody>
 </table>
 
-<br>
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">
+    Cras justo odio
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+</div>
 
 <%= link_to 'New Car', new_car_path %>
