@@ -1,57 +1,65 @@
-<%= form_with(model: car, local: true) do |form| %>
-  <% if car.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
+<div class="container">
+  <%= form_with(model: car, local: true) do |form| %>
+    <% if car.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
 
-      <ul>
-      <% car.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% car.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group row">
+      <div class="col-5">
+        <div class="field">
+          <%= form.label :model %>
+          <%= form.text_field :model, class: "form-control" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :price %>
+          <%= form.number_field :price, class: "form-control" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :main_picture %>
+          <%= form.file_field :main_picture %>
+        </div>
+
+        <div class="field">
+          <%= form.label :description %>
+          <%= form.text_area :description, class: "form-control" %>
+        </div>
+      </div>
+      <div class="offset-2 col-5">
+
+        <div class="field">
+          <%= form.label :energy %>
+          <%= form.text_field :energy, class: "form-control" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :gearbox %>
+          <%= form.select :gearbox, ['Manual', 'Automatic', 'Semi-Auto']%>
+        </div>
+
+        <div class="field">
+          <%= form.label :horsepower %>
+          <%= form.number_field :horsepower, class: "form-control" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :mileage %>
+          <%= form.number_field :mileage, class: "form-control" %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit class: "btn btn-success" %>
+        </div>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :main_picture %>
-    <%= form.file_field :main_picture %>
-  </div>
-
-  <div class="field">
-    <%= form.label :model %>
-    <%= form.text_field :model %>
-  </div>
-
-  <div class="field">
-    <%= form.label :horsepower %>
-    <%= form.number_field :horsepower %>
-  </div>
-
-  <div class="field">
-    <%= form.label :mileage %>
-    <%= form.number_field :mileage %>
-  </div>
-
-  <div class="field">
-    <%= form.label :energy %>
-    <%= form.text_field :energy %>
-  </div>
-
-  <div class="field">
-    <%= form.label :gearbox %>
-    <%= form.text_field :gearbox %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
