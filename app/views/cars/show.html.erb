@@ -1,40 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Model:</strong>
-  <%= @car.model %>
-</p>
 
-<p>
-  <strong>Horsepower:</strong>
-  <%= @car.horsepower %>
-</p>
-
-<p>
-  <strong>Mileage:</strong>
-  <%= @car.mileage %>
-</p>
-
-<p>
-  <strong>Energy:</strong>
-  <%= image_tag(@car.main_picture) %>
-</p>
-
-<p>
-  <strong>Gearbox:</strong>
-  <%= @car.gearbox %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @car.price %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @car.description %>
-</p>
-
+<div class="container">
+    
+  <h4><%= @car.model %></h4>
+  <div class="row">
+    <div class="col-2">
+      <p><%= image_tag(@car.main_picture) %></p>
+    </div>
+    <div class="offset-2 col-2">
+      <p><%= link_to "Pay now", '#', class: "btn btn-primary" %></p>
+      <p><%= "Price: #{number_to_currency(@car.price)}" %> </p>
+    </div>
+  </div>
+  <dl>
+    <dt>Horsepower</dt>
+    <dd><%= @car.horsepower %></dd>
+    <dt>Mileage:</dt>
+    <dd><%= @car.mileage %></dd>
+    <dt>Gearbox:</dt>
+    <dd><%= @car.gearbox %></dd>
+    <dt>Energy: </dt>
+    <dd><%= @car.energy %></dd>
+    <dt>Description:</dt>
+    <dd><%= @car.description %></dd>
+  </dt>
+</div>
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Destroy', @car, method: 'delete' %> | 
 <%= link_to 'Back', cars_path %>
