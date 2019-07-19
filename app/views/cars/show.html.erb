@@ -8,23 +8,27 @@
     <div class="col-2">
       <p><%= image_tag(@car.main_picture) %></p>
     </div>
-    <div class="offset-2 col-2">
-      <p><%= link_to "Pay now", '#', class: "btn btn-primary" %></p>
-      <p><%= "Price: #{number_to_currency(@car.price)}" %> </p>
+    <div class="offset-1 col-4">
+      <dl>
+        <dt>Horsepower</dt>
+        <dd><%= @car.horsepower %></dd>
+        <dt>Mileage:</dt>
+        <dd><%= @car.mileage %></dd>
+        <dt>Gearbox:</dt>
+        <dd><%= @car.gearbox %></dd>
+        <dt>Energy: </dt>
+        <dd><%= @car.energy %></dd>
+      </dt>
+    </div>
+    <div class="col-2">
+      <p>Posted by:</p>
+      <p>Jean Augustin</p>
+      <p><%= link_to number_to_currency(@car.price), '#', class: "btn btn-primary" %></p>
+      <p>Contacts in progress</p>
     </div>
   </div>
-  <dl>
-    <dt>Horsepower</dt>
-    <dd><%= @car.horsepower %></dd>
-    <dt>Mileage:</dt>
-    <dd><%= @car.mileage %></dd>
-    <dt>Gearbox:</dt>
-    <dd><%= @car.gearbox %></dd>
-    <dt>Energy: </dt>
-    <dd><%= @car.energy %></dd>
-    <dt>Description:</dt>
-    <dd><%= @car.description %></dd>
-  </dt>
+  <h6>Story of the vehicule: </h6>
+  <p><%= @car.description %></p>
 </div>
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Destroy', @car, method: 'delete' %> | 
