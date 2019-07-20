@@ -23,13 +23,13 @@
     <div class="col-2">
       <p>Posted by:</p>
       <p>Jean Augustin</p>
-      <p><%= link_to number_to_currency(@car.price), '#', class: "btn btn-primary" %></p>
+      <p><%= link_to number_to_currency(@car.price), '#', class: "btn btn-success" %></p>
       <p>Contacts in progress</p>
     </div>
   </div>
   <h6>Story of the vehicule: </h6>
   <p><%= @car.description %></p>
 </div>
-<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Edit', edit_car_path(@car), class: "btn btn-primary" %> |
 <%= link_to 'Destroy', @car, method: 'delete' %> | 
-<%= link_to 'Back', cars_path %>
+<%= link_to 'Back', cars_path, class: "btn btn-secondary" %>

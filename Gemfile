@@ -8,6 +8,7 @@ gem 'rails', '~> 5.2.3'
 gem 'bootstrap', '~> 4.3.1'
 gem 'sprockets-rails'
 gem 'jquery-rails'
+gem 'bcrypt', '~> 3.1.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
